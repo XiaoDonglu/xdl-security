@@ -3,6 +3,8 @@ package com.xdl.web.controller;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.xdl.dto.User;
 import com.xdl.dto.UserQueryCondition;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
 import org.springframework.validation.BindingResult;
@@ -25,6 +27,7 @@ public class UserController {
 
     @GetMapping
     @JsonView(User.UsersimpleView.class)
+    @ApiOperation(value = "用户查询服务")
     public List<User> query(UserQueryCondition condition, Pageable pageable) {
 
         log.info(condition.toString());
@@ -40,7 +43,10 @@ public class UserController {
 
     @GetMapping("/{id:\\d+}")
     @JsonView(User.UserDetailView.class)
-    public User getInfo(@PathVariable String id) {
+    public User getInfo(@ApiParam(value = "用户id") @PathVariable String id) {
+
+//        throw new UserNotExistException(id);
+
         User user = new User();
         user.setUsername("tom");
 

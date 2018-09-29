@@ -20,13 +20,13 @@ import java.util.List;
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter {
 
-    @SuppressWarnings("unused")
+//    @SuppressWarnings("unused")
     @Autowired
     private TimeInterceptor timeInterceptor;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-//        registry.addInterceptor(timeInterceptor);
+        registry.addInterceptor(timeInterceptor);
     }
 
     //    @Bean
