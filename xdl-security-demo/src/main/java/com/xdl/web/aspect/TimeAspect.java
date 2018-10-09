@@ -20,17 +20,17 @@ public class TimeAspect {
     @Around("execution(* com.xdl.web.controller.UserController.*(..))")
     public Object handleControllerMethod(ProceedingJoinPoint point) throws Throwable {
 
-        long start = System.currentTimeMillis();
+       /* long start = System.currentTimeMillis();
         log.info("time aspect start");
 
         Object[] args = point.getArgs();
         for (Object arg : args) {
             log.info("arg is {}", arg);
-        }
+        }*/
         Object object = point.proceed();
 
-        log.info("time aspect 耗时:" + (System.currentTimeMillis() - start));
-        log.info("time aspect end");
+        /*log.info("time aspect 耗时:" + (System.currentTimeMillis() - start));
+        log.info("time aspect end");*/
 
         return object;
     }

@@ -1,20 +1,20 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/xdl-demo?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
+    url: jdbc:mysql://192.168.43.130:3306/xdl-demo?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
     username: root
     password: 123456
   session:
     store-type: none
   redis:
-    host: localhost
+    host: 192.168.43.130
     port: 6379
-    password: 123456
+    password:
 
 server:
   port: 8060
 
-security:
-  basic:
-    enabled: false
+#security:
+#  basic:
+#    enabled: false
 
