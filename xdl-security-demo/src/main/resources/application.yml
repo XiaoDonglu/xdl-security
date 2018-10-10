@@ -18,3 +18,9 @@ server:
 #  basic:
 #    enabled: false
 
+xdl:
+  security:
+    browser:
+      loginType: JSON
+#      loginPage: /demo-signIn.html
+
