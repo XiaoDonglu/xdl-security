@@ -3,6 +3,7 @@ package com.xdl.security.core.validate.code.image;
 import com.xdl.security.core.properties.SecurityProperties;
 import com.xdl.security.core.validate.code.ValidateCode;
 import com.xdl.security.core.validate.code.ValidateCodeGenerator;
+import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.ServletRequestUtils;
@@ -18,13 +19,15 @@ import java.util.Random;
  * @author xdl
  * @date 2018-10-10
  */
-@Setter
+
 public class ImageCodeGenerator implements ValidateCodeGenerator {
 
     /**
      * 系统配置
      */
     @Autowired
+    @Getter
+    @Setter
     private SecurityProperties securityProperties;
 
     @Override

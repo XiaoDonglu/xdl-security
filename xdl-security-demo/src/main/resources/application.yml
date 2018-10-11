@@ -26,6 +26,6 @@ xdl:
     code:
       image:
         width: 100
-        length: 6
+        length: 4
 #        url: /user,/user/*
 

@@ -2,6 +2,8 @@ package com.xdl.security.core.validate.code;
 
 import com.xdl.security.core.properties.SecurityProperties;
 import com.xdl.security.core.validate.code.image.ImageCodeGenerator;
+import com.xdl.security.core.validate.code.sms.DefaultSmsCodeSender;
+import com.xdl.security.core.validate.code.sms.SmsCodeSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
@@ -19,6 +21,11 @@ public class ValidateCodeBeanConfig {
     @Autowired
     private SecurityProperties securityProperties;
 
+    /**
+     * 图形验证码生成器
+     *
+     * @return
+     */
     @Bean
     @ConditionalOnMissingBean(name = "imageValidateCodeGenerator")
     public ValidateCodeGenerator imageValidateCodeGenerator() {
@@ -27,10 +34,15 @@ public class ValidateCodeBeanConfig {
         return codeGenerator;
     }
 
-    /*@Bean
+    /**
+     * 短信验证码生成器
+     *
+     * @return
+     */
+    @Bean
     @ConditionalOnMissingBean(SmsCodeSender.class)
     public SmsCodeSender smsCodeSender() {
         return new DefaultSmsCodeSender();
-    }*/
+    }
 
 }
