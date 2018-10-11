@@ -15,4 +15,10 @@ public class BrowserProperties {
     private String loginPage = "/xdl-signIn.html";
 
     private LoginType loginType = LoginType.JSON;
+
+    /**
+     * 【记住我】失效时间
+     */
+    private int rememberMeSeconds = 3600;
+
 }

@@ -23,4 +23,9 @@ xdl:
     browser:
       loginType: JSON
 #      loginPage: /demo-signIn.html
+    code:
+      image:
+        width: 100
+        length: 6
+#        url: /user,/user/*
 
